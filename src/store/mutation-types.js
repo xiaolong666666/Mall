@@ -1,0 +1,5 @@
+export const HOME_CASUAL = "home_casual"
+export const HOME_NAV = "home_nav"
+export const HOME_SHOP = "home_shop"
+export const RECOMMEND_SHOP = "recommend_shop"
+export const SEARCH_GOODS = "search_goods" 

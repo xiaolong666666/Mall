@@ -1,24 +1,24 @@
 <template>
     <div class="bottom-tab">
-        <div class="tab-item" @click="switchTo('/')">
-            <img :src="'/'===$route.path ? tabImgArr[0].selected : tabImgArr[0].normal" alt="">
-            <span :class="{on: '/'===$route.path}" >首页</span>
+        <div class="tab-item" @click="switchTo('/home')">
+            <img :src="$route.path.includes('/home') ? tabImgArr[0].selected : tabImgArr[0].normal" alt="">
+            <span :class="{on: $route.path.includes('/home')}" >首页</span>
         </div>
         <div class="tab-item" @click="switchTo('/recommend')">
-            <img :src="'/recommend'===$route.path ? tabImgArr[1].selected : tabImgArr[1].normal" alt="">
-            <span :class="{on: '/recommend'===$route.path}" >推荐</span>
+            <img :src="$route.path.includes('/recommend') ? tabImgArr[1].selected : tabImgArr[1].normal" alt="">
+            <span :class="{on: $route.path.includes('/recommend')}" >推荐</span>
         </div>
         <div class="tab-item" @click="switchTo('/search')">
-            <img :src="'/search'===$route.path ? tabImgArr[2].selected : tabImgArr[2].normal" alt="">
-            <span :class="{on: '/search'===$route.path}" >搜索</span>
+            <img :src="$route.path.includes('/search') ? tabImgArr[2].selected : tabImgArr[2].normal" alt="">
+            <span :class="{on: $route.path.includes('/search')}" >搜索</span>
         </div>
         <div class="tab-item" @click="switchTo('/chat')">
-            <img :src="'/chat'===$route.path ? tabImgArr[3].selected : tabImgArr[3].normal" alt="">
-            <span :class="{on: '/chat'===$route.path}" >聊天</span>
+            <img :src="$route.path.includes('/chat') ? tabImgArr[3].selected : tabImgArr[3].normal" alt="">
+            <span :class="{on: $route.path.includes('/chat')}" >聊天</span>
         </div>
         <div class="tab-item" @click="switchTo('/me')">
-            <img :src="'/me'===$route.path ? tabImgArr[4].selected : tabImgArr[4].normal" alt="">
-            <span :class="{on: '/me'===$route.path}" >我的</span>
+            <img :src="$route.path.includes('/me') ? tabImgArr[4].selected : tabImgArr[4].normal" alt="">
+            <span :class="{on: $route.path.includes('/me')}" >我的</span>
         </div>
     </div>
 </template>
@@ -65,6 +65,7 @@
             img{
                 width 35%
                 margin-bottom 2px
+                vertical-align top
             }
             span{
                 display inline-block
