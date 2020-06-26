@@ -8,7 +8,7 @@
     import RecommendMain from '@/components/Recommend/Main.vue'
     export default {
         name: 'Recommend',
-        components: { RecommendMain },
+        components: { RecommendMain }
     }
 </script>
 

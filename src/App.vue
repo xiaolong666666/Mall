@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view/>
-    <tab-bar />
+    <tab-bar v-show="$route.meta.showBottomTabBar"/>
   </div>
 </template>
 
@@ -9,7 +9,10 @@
   import TabBar from '@/components/TabBar/TabBar.vue'
   export default {
     name: 'App',
-    components: { TabBar }
+    components: { TabBar },
+    mounted(){
+      this.$store.dispatch('reqUserInfo')
+    }
   }
 </script>
 

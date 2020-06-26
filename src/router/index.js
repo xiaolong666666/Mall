@@ -7,6 +7,9 @@ import Recommend from '@/views/Recommend'
 import Chat from '@/views/Chat'
 import Search from '@/views/Search'
 import Me from '@/views/Me'
+import Login from '@/views/Login'
+import Setting from '@/views/Me/Setting'
+import Userdetail from '@/views/Me/Userdetail'
 
 // 二级路由
 import Hot from '@/views/Home/Children/Hot'
@@ -30,37 +33,56 @@ const routes = [
     path: '/home',
     component: Home,
     children: [
-      { path: 'hot', name: 'Hot', component: Hot },
-      { path: 'box', name: 'Box', component: Box },
-      { path: 'dress', name: 'Dress', component: Dress },
-      { path: 'ele', name: 'Ele', component: Ele },
-      { path: 'food', name: 'Food', component: Food },
-      { path: 'general', name: 'General', component: General },
-      { path: 'man', name: 'Man', component: Man },
-      { path: 'mbaby', name: 'Mbaby', component: Mbaby },
-      { path: 'shirt', name: 'Shirt', component: Shirt },
+      { path: 'hot', name: 'Hot', meta: {showBottomTabBar: true}, component: Hot },
+      { path: 'box', name: 'Box', meta: {showBottomTabBar: true}, component: Box },
+      { path: 'dress', name: 'Dress', meta: {showBottomTabBar: true}, component: Dress },
+      { path: 'ele', name: 'Ele', meta: {showBottomTabBar: true}, component: Ele },
+      { path: 'food', name: 'Food', meta: {showBottomTabBar: true}, component: Food },
+      { path: 'general', name: 'General', meta: {showBottomTabBar: true}, component: General },
+      { path: 'man', name: 'Man', meta: {showBottomTabBar: true}, component: Man },
+      { path: 'mbaby', name: 'Mbaby', meta: {showBottomTabBar: true}, component: Mbaby },
+      { path: 'shirt', name: 'Shirt', meta: {showBottomTabBar: true}, component: Shirt },
       { path: '', redirect: 'hot' }
     ]
   },
   {
     path: '/recommend',
     name: 'Recommend',
+    meta: {showBottomTabBar: true},
     component: Recommend
   },
   {
     path: '/search',
     name: 'Search',
+    meta: {showBottomTabBar: true},
     component: Search
   },
   {
     path: '/chat',
     name: 'Chat',
+    meta: {showBottomTabBar: true},
     component: Chat
   },
   {
     path: '/me',
     name: 'Me',
+    meta: {showBottomTabBar: true},
     component: Me
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/setting',
+    name: 'Setting',
+    component: Setting
+  },
+  {
+    path: '/userdetail',
+    name: 'Userdetail',
+    component: Userdetail
   }
 ]
 

@@ -1,5 +1,5 @@
-import { getHomeCasual, getHomeNav, getHomeShopList, getRecommendShopList, getSearchGoods } from './../api'
-import { HOME_CASUAL, HOME_NAV, HOME_SHOP, RECOMMEND_SHOP, SEARCH_GOODS } from './mutation-types'
+import { getHomeCasual, getHomeNav, getHomeShopList, getRecommendShopList, getSearchGoods, getUserInfo, getLogout } from './../api'
+import { HOME_CASUAL, HOME_NAV, HOME_SHOP, RECOMMEND_SHOP, SEARCH_GOODS, USER_INFO, RESET_USER_INFO } from './mutation-types'
 
 export default {
     async reqHomeCasual({commit},callback){
@@ -23,5 +23,20 @@ export default {
     async reqSearchGoods({ commit }) {
         const result = await getSearchGoods()
         commit(SEARCH_GOODS, { searchgoods: result.data.message.data })
+    },
+    currentUser({ commit }, userinfo){
+        commit(USER_INFO, { userinfo })
+    },
+    async reqUserInfo({ commit }){
+        const result = await getUserInfo()
+        if(result.data.success_code===200){
+            commit(USER_INFO, { userinfo: result.data.message })
+        }
+    },
+    async reqLogout({ commit }){
+        const result = await getLogout()
+        if (result.data.success_code === 200){
+            commit(RESET_USER_INFO)
+        }
     }
 }
